@@ -7,3 +7,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', App\Livewire\Posts\Index::class)->name('posts.index');
+Route::get('/create', App\Livewire\Posts\Create::class)->name('posts.create');
