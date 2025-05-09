@@ -20,7 +20,7 @@ Livewire Blog
                     <button type="button" onclick="this.parentElement.parentElement.parentElement.parentElement.remove()" class="inline-flex rounded-md bg-green-50 p-1.5 text-green-500 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-green-50">
                         <span class="sr-only">Dismiss</span>
                         <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.137-.089L11.828 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
                         </svg>
                     </button>
                 </div>
@@ -43,14 +43,14 @@ Livewire Blog
     <!-- Grid view for larger screens -->
     <div class="hidden md:grid md:grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         @forelse ($posts as $post)
-        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-lg transition-all duration-300 hover:shadow-md">
+        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-lg transition-all duration-300 hover:shadow-md flex flex-col">
             <div class="w-full h-64 bg-gray-100 dark:bg-gray-900 flex items-center justify-center overflow-hidden">
                 <img src="{{ asset('/storage/posts/'.$post->image) }}" class="max-w-full max-h-64 object-contain" alt="{{ $post->title }}">
             </div>
-            <div class="p-6">
+            <div class="p-6 flex-1 flex flex-col">
                 <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ $post->title }}</h2>
-                <div class="text-sm text-gray-500 dark:text-gray-300 line-clamp-3 mb-4">{!! $post->content !!}</div>
-                <div class="flex justify-end space-x-2">
+                <div class="text-sm text-gray-500 dark:text-gray-300 line-clamp-3 mb-4 flex-1">{!! $post->content !!}</div>
+                <div class="flex justify-end space-x-2 mt-auto pt-4">
                     <a href="/edit/{{ $post->id }}" wire:navigate class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
